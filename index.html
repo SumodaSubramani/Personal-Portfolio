@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Narava Sumoda Subramani — Portfolio</title>
+  <meta name="description" content="Narava Sumoda Subramani — B.Tech CS | Full-Stack Developer | AWS & Cloud | Projects: Community Book Exchange, AI Video Summarizer, DopaSense" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #94a3b8;
+      --accent: #06b6d4;
+      --glass: rgba(255, 255, 255, 0.04);
+      --radius: 14px;
+      color-scheme: dark;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: Inter, system-ui, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg, #071022 0%, #071729 60%);
+      color: #e6eef6;
+      -webkit-font-smoothing: antialiased
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none
+    }
+
+    .container {
+      max-width: 800px; /* Reduced max-width for a single-column feel */
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    /* Header / Hero */
+    header {
+      display: flex; /* Changed to flex for vertical stacking on small screens */
+      flex-direction: column;
+      align-items: center; /* Center items for a cleaner look */
+      text-align: center;
+      gap: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05); /* Separator */
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%; /* Make it round */
+      background: linear-gradient(135deg, #1f2937, #111827);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 28px;
+      overflow: hidden; /* Ensure image stays within circle */
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.08); /* Slightly more prominent border */
+    }
+
+    .name {
+      font-size: 2.2rem; /* Larger name */
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      margin-top: 0.5rem;
+    }
+
+    .role {
+      color: var(--muted);
+      margin-top: 0.25rem;
+      font-size: 1.1rem;
+    }
+
+    .contact {
+      margin-top: 1.5rem; /* More space */
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center; /* Center contact pills */
+    }
+
+    .pill {
+      background: var(--glass);
+      padding: 8px 14px; /* Slightly larger pills */
+      border-radius: 999px;
+      font-size: 0.95rem;
+      color: var(--muted);
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      transition: background 0.2s ease;
+    }
+    .pill:hover {
+        background: rgba(6,182,212,0.1); /* Hover effect for pills */
+        color: var(--accent);
+    }
+
+    /* Nav */
+    nav {
+      margin-top: 2rem; /* More space for navigation */
+      display: flex;
+      gap: 10px; /* Larger gap */
+      flex-wrap: wrap;
+      justify-content: center; /* Center navigation links */
+    }
+
+    nav a {
+      padding: 10px 16px; /* Larger clickable area */
+      border-radius: 10px;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.08); /* Slightly thicker border */
+      font-weight: 600;
+      color: var(--muted);
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    nav a:hover {
+      background: rgba(6,182,212,0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Main Content - Single Column */
+    main {
+      display: flex; /* Use flexbox for vertical stacking */
+      flex-direction: column;
+      gap: 1.5rem; /* Gap between sections */
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.015));
+      border-radius: var(--radius);
+      padding: 1.75rem; /* Increased padding */
+      box-shadow: 0 8px 24px rgba(2, 6, 23, 0.7); /* More prominent shadow */
+      border: 1px solid rgba(255,255,255,0.03); /* Subtle card border */
+    }
+
+    h2 {
+      margin: 0 0 1rem 0; /* More space below headings */
+      color: #e6eef6;
+      font-size: 1.8rem; /* Larger section titles */
+      border-bottom: 1px solid rgba(255,255,255,0.05); /* Separator under h2 */
+      padding-bottom: 0.75rem;
+    }
+    h3 {
+        color:#cfefff;
+        margin:0 0 0.8rem 0;
+        font-size: 1.3rem; /* Larger sub-headings */
+    }
+
+
+    p {
+      color: var(--muted);
+      line-height: 1.6; /* Improved readability */
+      margin-bottom: 1rem;
+    }
+    p.small {
+        font-size: 0.95rem;
+    }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      gap: 1rem; /* Gap between projects */
+    }
+
+    .project {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      padding: 1.2rem; /* Increased padding for projects */
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(6, 182, 212, 0.05), rgba(0, 0, 0, 0)); /* Slightly more prominent */
+      border: 1px solid rgba(6, 182, 212, 0.1); /* Thicker border */
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .project:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(6,182,212,0.15);
+    }
+
+    .project .meta {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      flex-wrap: wrap; /* Ensure tags wrap on small screens */
+    }
+    .project .meta span {
+        background: rgba(255,255,255,0.05);
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-size: 0.8rem;
+    }
+
+
+    /* Skills - More organized */
+    .skill-category {
+      margin-bottom: 1.5rem;
+    }
+    .skill-category h3 {
+        margin-bottom: 0.75rem;
+        font-size: 1.2rem;
+        color: #e6eef6;
+    }
+    .skill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+    }
+    .skill-item {
+        background: rgba(255,255,255,0.08);
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        color: #e6eef6;
+        font-weight: 500;
+    }
+
+
+    ul.clean {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem; /* More space between list items */
+    }
+
+    li.small {
+      font-size: 1rem; /* Slightly larger text for readability */
+      color: var(--muted);
+    }
+
+    /* Certifications & Achievements List */
+    .bullet-list li {
+        position: relative;
+        padding-left: 1.5rem;
+    }
+    .bullet-list li::before {
+        content: "•"; /* Custom bullet point */
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 2rem; /* More space from content */
+      font-size: 0.9rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* Utility */
+    .row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn, .ghost {
+      padding: 10px 18px; /* Larger buttons */
+      border-radius: 10px;
+      font-weight: 700;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+    .btn {
+      background: var(--accent);
+      color: #042028;
+      border: 1px solid var(--accent);
+    }
+    .btn:hover {
+        background: #0ea7c6; /* Slightly darker accent on hover */
+        border-color: #0ea7c6;
+    }
+    .ghost {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--muted);
+    }
+    .ghost:hover {
+        background: rgba(255,255,255,0.05);
+        border-color: rgba(255,255,255,0.2);
+        color: #e6eef6;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .container {
+        margin: 1rem auto;
+        padding: 0.75rem;
+      }
+      .name {
+        font-size: 1.8rem;
+      }
+      .role {
+        font-size: 1rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .pill, nav a, .btn, .ghost {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+      }
+      .skill-item {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar">
+        <img src="assets/MyImage.jpeg" alt="Sumoda Subramani">
+      </div>
+      <div>
+        <div class="name">Narava Sumoda Subramani</div>
+        <div class="role">B.Tech — Full‑Stack Developer · AWS · Cloud · AI</div>
+        <div class="contact" aria-label="contact">
+          <a class="pill" href="mailto:sumoda355@gmail.com">sumoda355@gmail.com</a>
+          <a class="pill" href="tel:+917995964618">+91 7995964618</a>
+          <a class="pill" href="https://linkedin.com/in/sumoda-subramani-narava" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="pill" href="https://github.com/SumodaSubramani" target="_blank" rel="noopener">GitHub</a>
+          <a class="pill" href="https://leetcode.com/u/SumodaSubramani/" target="_blank" rel="noopener">LeetCode</a>
+          <a class="pill" href="https://www.codechef.com/users/sumoda_53" target="_blank" rel="noopener">CodeChef</a>
+        </div>
+        <nav aria-label="primary navigation">
+          <a href="#summary">Summary</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#achievements">Achievements</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="summary" class="card">
+        <h2 id="summary">Summary</h2>
+        <p>Results-driven Computer Science undergraduate specializing in Full Stack Development, AWS, and Google Cloud. Skilled in architecting scalable applications, optimizing performance, and leveraging cloud-native & serverless architectures. Experienced in delivering high-impact solutions with measurable results, combining strong analytical, problem-solving, and collaboration skills.</p>
+        <div style="margin-top:1.5rem;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" href="#contact">Hire / Contact</a>
+            <a class="ghost" href="assets/Sumoda_Resume_last.pdf" download="Narava_Sumoda_Subramani_Resume.pdf">Download Résumé (PDF)</a>
+        </div>
+      </section>
+
+      <section aria-labelledby="skills" class="card">
+        <h2 id="skills">Skills</h2>
+        <div class="skill-category">
+            <h3>Programming</h3>
+            <div class="skill-list">
+                <span class="skill-item">C</span>
+                <span class="skill-item">C++</span>
+                <span class="skill-item">Java</span>
+                <span class="skill-item">Python</span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <h3>Web Development</h3>
+            <div class="skill-list">
+                <span class="skill-item">HTML</span>
+                <span class="skill-item">CSS</span>
+                <span class="skill-item">JavaScript</span>
+                <span class="skill-item">React</span>
+                <span class="skill-item">Node.js</span>
+                <span class="skill-item">Express.js</span>
+                <span class="skill-item">MERN Stack</span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <h3>Cloud Platforms</h3>
+            <div class="skill-list">
+                <span class="skill-item">AWS (EC2, S3, Lambda, DynamoDB)</span>
+                <span class="skill-item">Google Cloud (Generative AI APIs)</span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <h3>ServiceNow Administration</h3>
+            <div class="skill-list">
+                <span class="skill-item">Instance configuration</span>
+                <span class="skill-item">User management</span>
+                <span class="skill-item">Access control</span>
+                <span class="skill-item">Workflows</span>
+                <span class="skill-item">Catalog items</span>
+                <span class="skill-item">Update sets</span>
+                <span class="skill-item">Reporting</span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <h3>ServiceNow Development</h3>
+            <div class="skill-list">
+                <span class="skill-item">Application development</span>
+                <span class="skill-item">Scripting (Business Rules, Client Scripts)</span>
+                <span class="skill-item">UI Policies</span>
+                <span class="skill-item">Catalog customization</span>
+                <span class="skill-item">Workflow design</span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <h3>Databases</h3>
+            <div class="skill-list">
+                <span class="skill-item">SQL (Optimization, DB Design)</span>
+                <span class="skill-item">MongoDB</span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <h3>Core CS</h3>
+            <div class="skill-list">
+                <span class="skill-item">Data Structures & Algorithms</span>
+                <span class="skill-item">OOP</span>
+                <span class="skill-item">Operating Systems</span>
+                <span class="skill-item">DBMS</span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <h3>Soft Skills</h3>
+            <div class="skill-list">
+                <span class="skill-item">Problem-Solving</span>
+                <span class="skill-item">Analytical Thinking</span>
+                <span class="skill-item">Adaptability</span>
+                <span class="skill-item">Team Collaboration</span>
+                <span class="skill-item">Communication</span>
+            </div>
+        </div>
+      </section>
+
+
+      <section aria-labelledby="projects" class="card">
+        <h2 id="projects">Projects</h2>
+        <div class="projects">
+            <article class="project">
+              <h3 style="margin-top:0">DopaSense - Digital Wellbeing Application</h3>
+              <div class="meta">
+                  <span>Python</span>
+                  <span>Kotlin</span>
+                  <span>ML Scoring</span>
+                  <span>Recommendations</span>
+              </div>
+              <ul class="clean bullet-list">
+                  <li class="small">Developed a full-stack digital wellbeing application using Python and Kotlin to track and analyze smartphone usage patterns.</li>
+                  <li class="small">Engineered an ML-based scoring model to quantify a dopamine score and addiction risk for each app.</li>
+                  <li class="small">Designed a personalized recommendation system providing data-driven remedies to improve digital habits and reduce overuse.</li>
+              </ul>
+            </article>
+
+            <article class="project">
+              <h3 style="margin-top:0">Community Book Exchange Platform (MERN Stack)</h3>
+              <div class="meta">
+                  <span>MERN</span>
+                  <span>JWT</span>
+                  <span>Socket.IO</span>
+                  <span>Cloudinary</span>
+              </div>
+              <ul class="clean bullet-list">
+                  <li class="small">Architected and developed a community platform enabling users to lend, sell, and borrow books.</li>
+                  <li class="small">Implemented JWT authentication, CRUD APIs, and secure image uploads via Cloudinary, reducing unauthorized access attempts by 40%.</li>
+                  <li class="small">Integrated real-time chat with Socket.IO, approval workflows, user ratings, and recommendations.</li>
+              </ul>
+            </article>
+
+            <article class="project">
+              <h3 style="margin-top:0">AI Video Summarizer & Translator</h3>
+              <div class="meta">
+                  <span>Google Gemini API</span>
+                  <span>gTTS</span>
+                  <span>Streamlit</span>
+              </div>
+              <ul class="clean bullet-list">
+                  <li class="small">Engineered an AI-powered tool using Google Gemini API, gTTS, and Streamlit to summarize and translate videos in 50+ languages.</li>
+                  <li class="small">Reduced processing time to 1.3s, improving comprehension speed by 2-3x.</li>
+                  <li class="small">Enhanced accessibility for visually impaired users with instant speech output, improving accessibility by 25%.</li>
+              </ul>
+            </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="education" class="card">
+        <h2 id="education">Education</h2>
+        <ul class="clean">
+            <li class="small"><strong>Present:</strong> B.Tech in Computer Science and Engineering, <strong>Gayatri Vidya Parishad College of Engineering</strong>, GPA: 9.18</li>
+            <li class="small"><strong>2020-2022:</strong> Intermediate in MPC, <strong>Narayana Educational Institutions</strong>, GPA: 97.6%</li>
+            <li class="small"><strong>2019-2020:</strong> Higher Education (ICSE), <strong>St. Joseph's Secondary School</strong>, GPA: 93.5%</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="certifications" class="card">
+        <h2 id="certifications">Certifications</h2>
+        <ul class="clean bullet-list">
+            <li class="small">ServiceNow Certified System Administrator (CSA)</li>
+            <li class="small">ServiceNow Certified Application Developer (CAD)</li>
+            <li class="small">MERN Stack Project Development - Internship</li>
+            <li class="small">AWS Data Engineering (AICTE)</li>
+            <li class="small">Full Stack Web Development (AICTE)</li>
+            <li class="small">Google Cloud Generative AI (AICTE)</li>
+            <li class="small">Python for Beginners (Infosys Springboard)</li>
+            <li class="small">Fundamentals of C++ (IBM)</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="achievements" class="card">
+        <h2 id="achievements">Achievements</h2>
+        <ul class="clean bullet-list">
+            <li class="small">Participated in SIH Internal Hackathon 2024 (Smart India Hackathon)</li>
+            <li class="small">Solved 300+ problems on LeetCode (Rating: 1800+)</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="contact" class="card">
+        <h2 id="contact">Contact</h2>
+        <p class="small">I am available for internships and full-time roles. Feel free to reach out!</p>
+        <ul class="clean">
+          <li class="small">Email: <a href="mailto:sumoda355@gmail.com">sumoda355@gmail.com</a></li>
+          <li class="small">Phone: <a href="tel:+917995964618">+91 7995964618</a></li>
+        </ul>
+        <div style="margin-top:1.5rem;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="ghost" href="https://linkedin.com/in/sumoda-subramani-narava" target="_blank">LinkedIn</a>
+            <a class="ghost" href="https://github.com/SumodaSubramani" target="_blank">GitHub</a>
+            <a class="ghost" href="https://leetcode.com/u/SumodaSubramani/" target="_blank">LeetCode</a>
+            <a class="ghost" href="https://www.codechef.com/users/sumoda_53" target="_blank">CodeChef</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>Made by Sumoda • Available for internships & full-time roles • © <span id="year"></span></p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.querySelectorAll('nav a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const href = a.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          const el = document.querySelector(href);
+          if(el) el.scrollIntoView({behavior:'smooth',block:'start', offsetTop: -20});
+        }
+      })
+    });
+  </script>
+</body>
+</html>
