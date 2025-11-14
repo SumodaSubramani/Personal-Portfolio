@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Narava Sumoda Subramani — Portfolio</title>
+  <meta name="description" content="Narava Sumoda Subramani — B.Tech CS | Full‑Stack Developer | AWS & Cloud | Projects: Community Book Exchange, AI Video Summarizer, DopaSense" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#06b6d4; --glass: rgba(255,255,255,0.04);
+      --radius:14px; color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial; background:linear-gradient(180deg,#071022 0%, #071729 60%); color:#e6eef6;-webkit-font-smoothing:antialiased}
+    a{color:var(--accent);text-decoration:none}
+    .container{max-width:1100px;margin:2rem auto;padding:1rem}
+
+    /* Header / Hero */
+    header{display:grid;grid-template-columns:120px 1fr;gap:1.25rem;align-items:center}
+    .avatar{width:120px;height:120px;border-radius:16px;background:linear-gradient(135deg,#1f2937,#111827);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700;font-size:28px}
+    .avatar img{width:120px;height:120px;border-radius:16px;object-fit:cover;border:2px solid rgba(255,255,255,0.06)}
+    .name{font-size:1.6rem;font-weight:800;letter-spacing:0.2px}
+    .role{color:var(--muted);margin-top:6px}
+    .contact{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap}
+    .pill{background:var(--glass);padding:8px 12px;border-radius:999px;font-size:0.9rem;color:var(--muted);display:inline-flex;gap:8px;align-items:center}
+
+    /* Nav */
+    nav{margin-top:1.25rem;background:transparent;display:flex;gap:8px;flex-wrap:wrap}
+    nav a{padding:8px 12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.03);font-weight:600;color:var(--muted)}
+    nav a:hover{background:rgba(255,255,255,0.02);color:var(--accent)}
+
+    /* Layout */
+    main{display:grid;grid-template-columns:2fr 1fr;gap:1.25rem;margin-top:1.5rem}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));border-radius:var(--radius);padding:1.25rem;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    h2{margin:0 0 0.75rem 0;color:#e6eef6}
+    p{color:var(--muted);line-height:1.5}
+
+    /* Projects */
+    .projects{display:grid;gap:12px}
+    .project{display:flex;flex-direction:column;gap:8px;padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(6,182,212,0.03), rgba(0,0,0,0));border:1px solid rgba(6,182,212,0.06)}
+    .project .meta{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:0.9rem}
+    .badges{display:flex;gap:8px;flex-wrap:wrap}
+    .badge{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;font-size:0.8rem;color:var(--muted)}
+
+    /* Sidebar */
+    aside .section{margin-bottom:1rem}
+    .skill{display:flex;flex-direction:column;gap:6px}
+    .skill .bar{height:8px;background:rgba(255,255,255,0.05);border-radius:999px;overflow:hidden}
+    .skill .level{height:100%;background:linear-gradient(90deg,var(--accent),#7c3aed);width:60%}
+    ul.clean{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+    li.small{font-size:0.9rem;color:var(--muted)}
+
+    /* Footer */
+    footer{text-align:center;color:var(--muted);margin-top:1.25rem;font-size:0.9rem}
+
+    /* Responsive */
+    @media (max-width:900px){main{grid-template-columns:1fr}header{grid-template-columns:100px 1fr}.avatar{width:100px;height:100px}.avatar img{width:100px;height:100px}}
+
+    /* Utility */
+    .row{display:flex;gap:10px;align-items:center}
+    .btn{background:var(--accent);color:#042028;padding:8px 12px;border-radius:10px;font-weight:700}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.05);padding:8px 12px;border-radius:10px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <!-- Changed avatar to use an image. Place your photo at assets/profile-pic.jpg -->
+      <div class="avatar">
+        <img src="assets/profile-pic.jpg" alt="Sumoda Subramani">
+      </div>
+      <div>
+        <div class="name">Narava Sumoda Subramani</div>
+        <div class="role">B.Tech — Full‑Stack Developer · AWS · Cloud · AI</div>
+        <div class="contact" aria-label="contact">
+          <a class="pill" href="mailto:sumoda355@gmail.com">sumoda355@gmail.com</a>
+          <a class="pill" href="tel:+917995964618">+91 7995964618</a>
+          <a class="pill" href="https://linkedin.com/in/sumoda-subramani-narava" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="pill" href="https://github.com/SumodaSubramani" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <nav aria-label="primary navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#publish">Publish</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="about" class="card">
+        <h2 id="about">About</h2>
+        <p><strong>Summary:</strong> Results-driven Computer Science undergraduate specializing in Full Stack Development, AWS, and Google Cloud. Skilled in architecting scalable applications, optimizing performance, and leveraging cloud-native & serverless architectures. Strong analytical and problem-solving skills, with hands-on experience delivering production-ready projects.</p>
+
+        <div style="margin-top:12px">
+          <h3 style="color:#cfefff;margin:0 0 8px 0">Highlighted Projects</h3>
+          <div class="projects" id="projects">
+            <article class="project">
+              <div style="font-weight:700">DopaSense — Digital Wellbeing Application</div>
+              <div class="meta">Python · Kotlin · ML scoring model · Recommendations</div>
+              <p class="small">Built a full-stack app to track smartphone usage, engineered an ML-based dopamine scoring model and recommendation system to reduce app overuse.</p>
+            </article>
+
+            <article class="project">
+              <div style="font-weight:700">Community Book Exchange Platform</div>
+              <div class="meta">MERN · JWT · Socket.IO · Cloudinary</div>
+              <p class="small">Architected a platform to lend/sell/borrow books with secure auth, real-time chat and approval workflows. Implemented image uploads and rating system.</p>
+            </article>
+
+            <article class="project">
+              <div style="font-weight:700">AI Video Summarizer & Translator</div>
+              <div class="meta">Google Gemini API · Streamlit · gTTS</div>
+              <p class="small">Engineered an AI tool that summarizes and translates videos in 50+ languages, with speech output and performance optimizations.</p>
+            </article>
+          </div>
+        </div>
+
+        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="#contact">Hire / Contact</a>
+          <a class="ghost" href="#certifications">View Certifications</a>
+          <!-- Update the href below to point to your hosted resume or to the uploaded file path -->
+          <a class="ghost" href="Sumoda Resume last.pdf" download>Download Résumé (PDF)</a>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card section">
+          <h2 id="skills">Skills</h2>
+          <div class="skill">
+            <div class="row" style="justify-content:space-between"><div style="font-weight:700">Programming & CS</div><div class="small">C, C++, Java, Python</div></div>
+            <div class="bar" aria-hidden="true"><div class="level" style="width:80%"></div></div>
+          </div>
+          <div style="height:10px"></div>
+          <div class="skill">
+            <div class="row" style="justify-content:space-between"><div style="font-weight:700">Web / Cloud</div><div class="small">HTML, CSS, JavaScript, React, Node.js, AWS</div></div>
+            <div class="bar" aria-hidden="true"><div class="level" style="width:75%"></div></div>
+          </div>
+
+          <div style="margin-top:12px">
+            <h3 style="margin:0 0 8px 0">Quick Info</h3>
+            <ul class="clean">
+              <li class="small"><strong>College:</strong> Gayatri Vidya Parishad College of Engineering — B.Tech (GPA: 9.18)</li>
+              <li class="small"><strong>Certifications:</strong> ServiceNow CSA & CAD, AWS Data Engineering, Google Cloud Generative AI, Full Stack (AICTE)</li>
+              <li class="small"><strong>Problems Solved:</strong> 300+ LeetCode (rating ~1800+)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card section">
+          <h2 id="education">Education</h2>
+          <p class="small"><strong>Gayatri Vidya Parishad College of Engineering</strong><br>B.Tech — Computer Science & Engineering</p>
+          <p class="small" style="margin-top:6px"><strong>Intermediate (MPC):</strong> Narayana — 97.6%<br><strong>ICSE (St. Joseph's):</strong> 93.5%</p>
+        </div>
+
+        <div class="card section">
+          <h2 id="certifications">Certifications</h2>
+          <ul class="clean small">
+            <li>ServiceNow CSA • ServiceNow CAD</li>
+            <li>AWS Data Engineering • Full Stack Web Dev</li>
+            <li>Google Cloud Generative AI • Python (Infosys) • C++ (IBM)</li>
+          </ul>
+        </div>
+
+        <!-- New Publish section (point 4: publish to GitHub Pages / Netlify / Vercel) -->
+        <div class="card section" id="publish">
+          <h2>Publish (How to go live)</h2>
+          <p class="small">Two quick ways to publish your portfolio for free:</p>
+          <ul class="clean small">
+            <li><strong>GitHub Pages:</strong> Create a repository, push these files (index.html + assets/ + PDF), go to <em>Settings → Pages</em> and select the <code>main</code> branch. Your site will be live at <code>https://&lt;username&gt;.github.io/&lt;repo&gt;</code>.</li>
+            <li><strong>Netlify / Vercel:</strong> Drag & drop the project folder (or connect your GitHub repo). They deploy automatically and provide a custom domain. Great for continuous deploys and custom domains.</li>
+          </ul>
+          <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="ghost" href="https://docs.github.com/en/pages/getting-started-with-github-pages" target="_blank">GitHub Pages Guide</a>
+            <a class="ghost" href="https://www.netlify.com/docs/" target="_blank">Netlify Docs</a>
+            <a class="ghost" href="https://vercel.com/docs" target="_blank">Vercel Docs</a>
+          </div>
+        </div>
+
+        <div class="card section" id="contact">
+          <h2>Contact</h2>
+          <p class="small">Email: <a href="mailto:sumoda355@gmail.com">sumoda355@gmail.com</a><br>Phone: <a href="tel:+917995964618">+91 7995964618</a></p>
+          <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="ghost" href="https://linkedin.com/in/sumoda-subramani-narava" target="_blank">LinkedIn</a>
+            <a class="ghost" href="https://github.com/SumodaSubramani" target="_blank">GitHub</a>
+            <a class="ghost" href="https://leetcode.com/u/SumodaSubramani/" target="_blank">LeetCode</a>
+            <a class="ghost" href="https://www.codechef.com/users/sumoda_53" target="_blank">CodeChef</a>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <p>Made by Sumoda • Available for internships & full-time roles • © <span id="year"></span></p>
+    </footer>
+  </div>
+
+  <script>
+    // small utilities
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // smooth scroll for in-page links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const href = a.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          const el = document.querySelector(href);
+          if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      })
+    });
+  </script>
+</body>
+</html>
